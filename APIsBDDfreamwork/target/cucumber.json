@@ -1,0 +1,389 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 13,
+        "name": "Verify if place is being successfully added using AddPlaceAPI",
+        "description": "",
+        "id": "validating-place-api;verify-if-place-is-being-successfully-added-using-addplaceapi;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1854603300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "add place payload with \"2, side layout, cohen 09\",\"French-IN\",\"Frontline house\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2, side layout, cohen 09",
+                  "offset": 24
+                },
+                {
+                  "val": "French-IN",
+                  "offset": 51
+                },
+                {
+                  "val": "Frontline house",
+                  "offset": 63
+                }
+              ],
+              "location": "MyStepDefs.addPlacePayloadWith(String,String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1,
+              2
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2954503000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user call \"AddPlaceAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "AddPlaceAPI",
+                  "offset": 11
+                },
+                {
+                  "val": "POST",
+                  "offset": 30
+                }
+              ],
+              "location": "MyStepDefs.userCallWithHttpRequest(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4823899,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the API call got success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "MyStepDefs.the_API_call_got_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 432409000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "\"status\" in response body is \"OK\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "status",
+                  "offset": 1
+                },
+                {
+                  "val": "OK",
+                  "offset": 30
+                }
+              ],
+              "location": "MyStepDefs.inResponseBodyIs(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11171100,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "\"scope\" in response body is \"APP\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "scope",
+                  "offset": 1
+                },
+                {
+                  "val": "APP",
+                  "offset": 29
+                }
+              ],
+              "location": "MyStepDefs.inResponseBodyIs(String,String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 15,
+        "name": "Verify the added data from AddPlace using GetPlaceAPI",
+        "description": "",
+        "id": "validating-place-api;verify-the-added-data-from-addplace-using-getplaceapi",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9681500,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "place_Id from AddPlaceAPI",
+            "match": {
+              "location": "MyStepDefs.place_idFromAddPlaceAPI()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1091677901,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user call \"GetPlaceAPI\" with \"GET\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GetPlaceAPI",
+                  "offset": 11
+                },
+                {
+                  "val": "GET",
+                  "offset": 30
+                }
+              ],
+              "location": "MyStepDefs.userCallWithHttpRequest(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 155700,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the API call got success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "MyStepDefs.the_API_call_got_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10485401,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "\"name\" in response body is \"Frontline house\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "name",
+                  "offset": 1
+                },
+                {
+                  "val": "Frontline house",
+                  "offset": 28
+                }
+              ],
+              "location": "MyStepDefs.inResponseBodyIs(String,String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 21,
+        "name": "Verify if the added data from AddPlace can update address using UpdatePlaceAPI",
+        "description": "",
+        "id": "validating-place-api;verify-if-the-added-data-from-addplace-can-update-address-using-updateplaceapi",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2341300,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "update place payload",
+            "match": {
+              "location": "MyStepDefs.updatePlacePayload()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1031616800,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "user call \"UpdatePlaceAPI\" with \"PUT\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "UpdatePlaceAPI",
+                  "offset": 11
+                },
+                {
+                  "val": "PUT",
+                  "offset": 33
+                }
+              ],
+              "location": "MyStepDefs.userCallWithHttpRequest(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 155901,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "the API call got success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "MyStepDefs.the_API_call_got_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11992900,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "\"msg\" in response body is \"Address successfully updated\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "msg",
+                  "offset": 1
+                },
+                {
+                  "val": "Address successfully updated",
+                  "offset": 27
+                }
+              ],
+              "location": "MyStepDefs.inResponseBodyIs(String,String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 27,
+        "name": "Verify if the added data from AddPlace can delete using DeletePlaceAPI",
+        "description": "",
+        "id": "validating-place-api;verify-if-the-added-data-from-addplace-can-delete-using-deleteplaceapi",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1893000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "delete place payload",
+            "match": {
+              "location": "MyStepDefs.deletePlacePayload()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1190383400,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "user call \"DeletePlaceAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "DeletePlaceAPI",
+                  "offset": 11
+                },
+                {
+                  "val": "POST",
+                  "offset": 33
+                }
+              ],
+              "location": "MyStepDefs.userCallWithHttpRequest(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 83800,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "the API call got success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "MyStepDefs.the_API_call_got_success_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8148800,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "\"status\" in response body is \"OK\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "status",
+                  "offset": 1
+                },
+                {
+                  "val": "OK",
+                  "offset": 30
+                }
+              ],
+              "location": "MyStepDefs.inResponseBodyIs(String,String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Validating place API",
+    "description": "",
+    "id": "validating-place-api",
+    "keyword": "Feature",
+    "uri": "PlaceValidation.feature"
+  }
+]
